@@ -1,5 +1,8 @@
 package class16;
 
+/**
+ *
+ */
 public class GraphGenerator {
 
 	// matrix 所有的边

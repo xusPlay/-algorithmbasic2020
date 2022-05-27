@@ -3,7 +3,10 @@ package class11;
 import java.util.ArrayList;
 import java.util.List;
 
-// 本题测试链接：https://leetcode.com/problems/encode-n-ary-tree-to-binary-tree
+/**
+ * N叉树如何通过二叉树来序列化、并完成反序列化
+ * Leetcode题目：https://leetcode.com/problems/encode-n-ary-tree-to-binary-tree/
+ */
 public class Code03_EncodeNaryTreeToBinaryTree {
 
 	// 提交时不要提交这个类

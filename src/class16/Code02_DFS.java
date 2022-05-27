@@ -3,6 +3,9 @@ package class16;
 import java.util.HashSet;
 import java.util.Stack;
 
+/**
+ * 实现图的深度优先遍历
+ */
 public class Code02_DFS {
 
 	public static void dfs(Node node) {

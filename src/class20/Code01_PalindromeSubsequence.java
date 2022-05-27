@@ -1,5 +1,10 @@
 package class20;
 
+/**
+ * 给定一个字符串str，返回这个字符串的最长回文子序列长度
+ * 比如 ： str = “a12b3c43def2ghi1kpm”
+ * 最长回文子序列是“1234321”或者“123c321”，返回长度7
+ */
 // 测试链接：https://leetcode.com/problems/longest-palindromic-subsequence/
 public class Code01_PalindromeSubsequence {
 
@@ -12,6 +17,7 @@ public class Code01_PalindromeSubsequence {
 	}
 
 	// str[L..R]最长回文子序列长度返回
+	// 暴力递归
 	public static int f(char[] str, int L, int R) {
 		if (L == R) {
 			return 1;
@@ -40,8 +46,10 @@ public class Code01_PalindromeSubsequence {
 		}
 		for (int L = N - 3; L >= 0; L--) {
 			for (int R = L + 2; R < N; R++) {
+				// p2 和 p3 先比一下
 				dp[L][R] = Math.max(dp[L][R - 1], dp[L + 1][R]);
 				if (str[L] == str[R]) {
+					// 如果有p4
 					dp[L][R] = Math.max(dp[L][R], 2 + dp[L + 1][R - 1]);
 				}
 			}

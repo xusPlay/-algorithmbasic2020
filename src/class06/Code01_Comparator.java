@@ -5,6 +5,9 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.TreeMap;
 
+/**
+ * 比较器使用的code展示
+ */
 public class Code01_Comparator {
 
 	public static class Student {

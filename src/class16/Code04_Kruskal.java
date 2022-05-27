@@ -1,14 +1,10 @@
 package class16;
 
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.PriorityQueue;
-import java.util.Set;
-import java.util.Stack;
+import java.util.*;
 
-//undirected graph only
+/**
+ * 用并查集实现Kruskal算法
+ */
 public class Code04_Kruskal {
 
 	// Union-Find Set

@@ -2,6 +2,9 @@ package class12;
 
 import java.util.ArrayList;
 
+/**
+ * 判断二叉树是不是搜索二叉树
+ */
 public class Code02_IsBST {
 
 	public static class Node {

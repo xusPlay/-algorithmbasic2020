@@ -1,5 +1,8 @@
 package class03;
 
+/**
+ * 用环形数组实现栈和队列
+ */
 public class Code04_RingArray {
 
 	public static class MyQueue {

@@ -2,6 +2,9 @@ package class03;
 
 import java.util.Stack;
 
+/**
+ * 实现有getMin功能的栈
+ */
 public class Code05_GetMinStack {
 
 	public static class MyStack1 {

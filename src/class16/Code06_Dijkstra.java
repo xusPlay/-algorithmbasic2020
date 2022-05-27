@@ -4,7 +4,9 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map.Entry;
 
-// no negative weight
+/**
+ * 实现Dijkstra算法，用加强堆做更好的实现（16节+17节一开始）
+ */
 public class Code06_Dijkstra {
 
 	public static HashMap<Node, Integer> dijkstra1(Node from) {

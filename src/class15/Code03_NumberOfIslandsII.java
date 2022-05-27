@@ -9,6 +9,15 @@ import java.util.List;
 // 所有方法都可以直接通过
 public class Code03_NumberOfIslandsII {
 
+	/**
+	 *
+	 * 并查集第一种解决方法
+	 *
+	 * @param m
+	 * @param n
+	 * @param positions
+	 * @return
+	 */
 	public static List<Integer> numIslands21(int m, int n, int[][] positions) {
 		UnionFind1 uf = new UnionFind1(m, n);
 		List<Integer> ans = new ArrayList<>();
@@ -77,7 +86,9 @@ public class Code03_NumberOfIslandsII {
 
 		public int connect(int r, int c) {
 			int index = index(r, c);
+			// 之前有没有初始化
 			if (size[index] == 0) {
+				// 先把节点减出来
 				parent[index] = index;
 				size[index] = 1;
 				sets++;

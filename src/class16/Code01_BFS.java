@@ -4,6 +4,9 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * 实现图的宽度优先遍历
+ */
 public class Code01_BFS {
 
 	// 从node出发，进行宽度优先遍历

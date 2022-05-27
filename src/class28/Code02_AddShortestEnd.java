@@ -1,5 +1,8 @@
 package class28;
 
+/**
+ * 给定一个字符串str，只能在str的后面添加字符，想让str整体变成回文串，返回至少要添加几个字符
+ */
 public class Code02_AddShortestEnd {
 
 	public static String shortestEnd(String s) {

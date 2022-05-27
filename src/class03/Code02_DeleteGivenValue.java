@@ -1,5 +1,9 @@
 package class03;
 
+/**
+ *
+ * 在链表中删除指定值的所有节点
+ */
 public class Code02_DeleteGivenValue {
 
 	public static class Node {

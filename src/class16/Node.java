@@ -2,7 +2,9 @@ package class16;
 
 import java.util.ArrayList;
 
-// 点结构的描述
+/**
+ * 图的数据结构抽象
+ */
 public class Node {
 	public int value;
 	public int in;

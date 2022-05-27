@@ -1,6 +1,7 @@
 package class15;
 
 // 本题为leetcode原题
+// 一群朋友中，有几个不相交的朋友圈
 // 测试链接：https://leetcode.com/problems/friend-circles/
 // 可以直接通过
 public class Code01_FriendCircles {

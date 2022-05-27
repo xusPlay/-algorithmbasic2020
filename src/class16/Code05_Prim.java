@@ -5,7 +5,9 @@ import java.util.HashSet;
 import java.util.PriorityQueue;
 import java.util.Set;
 
-// undirected graph only
+/**
+ * 用堆实现Prim算法
+ */
 public class Code05_Prim {
 
 	public static class EdgeComparator implements Comparator<Edge> {

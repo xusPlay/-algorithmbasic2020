@@ -16,7 +16,9 @@ public class Code05_UnionFind {
 
 	public static class UnionFind<V> {
 		public HashMap<V, Node<V>> nodes;
+		// 记录指针
 		public HashMap<Node<V>, Node<V>> parents;
+		// 记录集合大小
 		public HashMap<Node<V>, Integer> sizeMap;
 
 		public UnionFind(List<V> values) {
@@ -38,6 +40,7 @@ public class Code05_UnionFind {
 				path.push(cur);
 				cur = parents.get(cur);
 			}
+			// 节点扁平化
 			while (!path.isEmpty()) {
 				parents.put(path.pop(), cur);
 			}

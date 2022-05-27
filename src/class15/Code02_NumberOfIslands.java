@@ -10,6 +10,11 @@ import java.util.Stack;
 // 所有方法都可以直接通过
 public class Code02_NumberOfIslands {
 
+	/**
+	 * 普通解法
+	 * @param board
+	 * @return
+	 */
 	public static int numIslands3(char[][] board) {
 		int islands = 0;
 		for (int i = 0; i < board.length; i++) {
@@ -35,6 +40,12 @@ public class Code02_NumberOfIslands {
 		infect(board, i, j + 1);
 	}
 
+	/**
+	 * 第一种 并查集的实现方式
+	 *
+	 * @param board
+	 * @return
+	 */
 	public static int numIslands1(char[][] board) {
 		int row = board.length;
 		int col = board[0].length;
@@ -43,23 +54,28 @@ public class Code02_NumberOfIslands {
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < col; j++) {
 				if (board[i][j] == '1') {
+					// 用dot区分每个1
 					dots[i][j] = new Dot();
 					dotList.add(dots[i][j]);
 				}
 			}
 		}
+		// 就相当于把所有的1初始化
 		UnionFind1<Dot> uf = new UnionFind1<>(dotList);
+		// 第0行没有上面的，一个单独的循环处理
 		for (int j = 1; j < col; j++) {
-			// (0,j)  (0,0)跳过了  (0,1) (0,2) (0,3)
+			// (0,j)  (0,0)跳过了 【既没有左，也没有上】 (0,1) (0,2) (0,3)
 			if (board[0][j - 1] == '1' && board[0][j] == '1') {
 				uf.union(dots[0][j - 1], dots[0][j]);
 			}
 		}
+		// 第0列没有左，一个单独的循环处理
 		for (int i = 1; i < row; i++) {
 			if (board[i - 1][0] == '1' && board[i][0] == '1') {
 				uf.union(dots[i - 1][0], dots[i][0]);
 			}
 		}
+
 		for (int i = 1; i < row; i++) {
 			for (int j = 1; j < col; j++) {
 				if (board[i][j] == '1') {
@@ -138,6 +154,12 @@ public class Code02_NumberOfIslands {
 
 	}
 
+	/**
+	 * 第二种  并查集解法
+	 *
+	 * @param board
+	 * @return
+	 */
 	public static int numIslands2(char[][] board) {
 		int row = board.length;
 		int col = board[0].length;
@@ -185,6 +207,7 @@ public class Code02_NumberOfIslands {
 			for (int r = 0; r < row; r++) {
 				for (int c = 0; c < col; c++) {
 					if (board[r][c] == '1') {
+						// 计算下标
 						int i = index(r, c);
 						parent[i] = i;
 						size[i] = 1;
@@ -213,6 +236,7 @@ public class Code02_NumberOfIslands {
 		}
 
 		public void union(int r1, int c1, int r2, int c2) {
+			// 算出来 i1 i2 然后 i1 i2合并
 			int i1 = index(r1, c1);
 			int i2 = index(r2, c2);
 			int f1 = find(i1);

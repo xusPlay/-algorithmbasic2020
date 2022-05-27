@@ -2,6 +2,9 @@ package class17;
 
 import java.util.Stack;
 
+/**
+ * 打印n层汉诺塔从最左边移动到最右边的全部过程（递归+非递归实现）
+ */
 public class Code02_Hanoi {
 
 	public static void hanoi1(int n) {

@@ -1,5 +1,8 @@
 package class10;
 
+/**
+ * 二叉树先序、中序、后序的递归遍历和递归序
+ */
 public class Code02_RecursiveTraversalBT {
 
 	public static class Node {
