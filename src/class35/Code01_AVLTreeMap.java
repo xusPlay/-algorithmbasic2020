@@ -25,6 +25,7 @@ public class Code01_AVLTreeMap {
 			size = 0;
 		}
 
+		// 右旋
 		private AVLNode<K, V> rightRotate(AVLNode<K, V> cur) {
 			AVLNode<K, V> left = cur.l;
 			cur.l = left.r;
@@ -34,6 +35,7 @@ public class Code01_AVLTreeMap {
 			return left;
 		}
 
+		// 左旋
 		private AVLNode<K, V> leftRotate(AVLNode<K, V> cur) {
 			AVLNode<K, V> right = cur.r;
 			cur.r = right.l;
@@ -178,19 +180,6 @@ public class Code01_AVLTreeMap {
 			}
 			AVLNode<K, V> lastNode = findLastIndex(key);
 			return lastNode != null && key.compareTo(lastNode.k) == 0 ? true : false;
-		}
-
-		public void put(K key, V value) {
-			if (key == null) {
-				return;
-			}
-			AVLNode<K, V> lastNode = findLastIndex(key);
-			if (lastNode != null && key.compareTo(lastNode.k) == 0) {
-				lastNode.v = value;
-			} else {
-				size++;
-				root = add(root, key, value);
-			}
 		}
 
 		public void remove(K key) {

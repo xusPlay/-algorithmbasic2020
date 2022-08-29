@@ -105,7 +105,7 @@ public class Code05_LowestLexicography {
 		for (int i = 0; i < testTimes; i++) {
 			String[] arr1 = generateRandomStringArray(arrLen, strLen);
 			String[] arr2 = copyStringArray(arr1);
-			if (!lowestString1(arr1).equals(lowestString2(arr2))) {
+			if (!lowestString3(arr1).equals(lowestString2(arr2))) {
 				for (String str : arr1) {
 					System.out.print(str + ",");
 				}
@@ -114,6 +114,21 @@ public class Code05_LowestLexicography {
 			}
 		}
 		System.out.println("finish!");
+	}
+
+	public static String lowestString3(String[] strs) {
+
+		if (strs == null || strs.length == 0) {
+			return "";
+		}
+
+		Arrays.sort(strs, (str1, str2) -> (str1 + str2).compareTo(str2 + str1));
+
+		StringBuilder ans = new StringBuilder();
+		for(String str : strs){
+			ans.append(str);
+		}
+		return ans.toString();
 	}
 
 }

@@ -7,6 +7,10 @@ import java.util.Set;
 
 /**
  * 用堆实现Prim算法
+ *
+ * 由点解锁边，由边再寻找点
+ *
+ *
  */
 public class Code05_Prim {
 

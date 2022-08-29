@@ -101,11 +101,31 @@ public class Code03_BestArrange {
 		int timeTimes = 1000000;
 		for (int i = 0; i < timeTimes; i++) {
 			Program[] programs = generatePrograms(programSize, timeMax);
-			if (bestArrange1(programs) != bestArrange2(programs)) {
+			if (bestArrange1(programs) != bestArrange(programs)) {
 				System.out.println("Oops!");
 			}
 		}
 		System.out.println("finish!");
 	}
 
+
+	public static int bestArrange(Program[] programs) {
+
+		if (programs == null || programs.length == 0) {
+			return 0;
+		}
+
+		Arrays.sort(programs, (p1, p2) -> p1.end - p2.end);
+
+		int ans = 0;
+		int timeLine = 0;
+		for (int i = 0; i < programs.length; i++) {
+			if (programs[i].start >= timeLine) {
+				ans++;
+				timeLine = programs[i].end;
+			}
+		}
+
+		return ans;
+	}
 }

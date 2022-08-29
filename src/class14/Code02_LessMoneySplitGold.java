@@ -15,18 +15,25 @@ public class Code02_LessMoneySplitGold {
 	// 等待合并的数都在arr里，pre之前的合并行为产生了多少总代价
 	// arr中只剩一个数字的时候，停止合并，返回最小的总代价
 	public static int process(int[] arr, int pre) {
+		// 数组中只有一个数了
 		if (arr.length == 1) {
 			return pre;
 		}
+
+
 		int ans = Integer.MAX_VALUE;
+		// 每两个组之间都尝试合并
+		// 答案一定在其中
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = i + 1; j < arr.length; j++) {
+				// 合并 i位置的数 和 j位置的数 ，枚举行为
 				ans = Math.min(ans, process(copyAndMergeTwo(arr, i, j), pre + arr[i] + arr[j]));
 			}
 		}
 		return ans;
 	}
 
+	// 把 i 位置的数和 j位置的数合并之后形成一个新的数组
 	public static int[] copyAndMergeTwo(int[] arr, int i, int j) {
 		int[] ans = new int[arr.length - 1];
 		int ansi = 0;
@@ -39,6 +46,7 @@ public class Code02_LessMoneySplitGold {
 		return ans;
 	}
 
+	// 最优解
 	public static int lessMoney2(int[] arr) {
 		PriorityQueue<Integer> pQ = new PriorityQueue<>();
 		for (int i = 0; i < arr.length; i++) {
@@ -69,11 +77,32 @@ public class Code02_LessMoneySplitGold {
 		int maxValue = 1000;
 		for (int i = 0; i < testTime; i++) {
 			int[] arr = generateRandomArray(maxSize, maxValue);
-			if (lessMoney1(arr) != lessMoney2(arr)) {
+			if (lessMoney1(arr) != lessMoney(arr)) {
 				System.out.println("Oops!");
 			}
 		}
 		System.out.println("finish!");
 	}
 
+
+	public static int lessMoney(int[] arr) {
+
+		if (arr == null || arr.length < 2) {
+			return 0;
+		}
+
+		PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+		for (int num : arr) {
+			minHeap.add(num);
+		}
+
+		int ans = 0;
+		while (minHeap.size() > 1) {
+			int cost = minHeap.poll() + minHeap.poll();
+			ans += cost;
+			minHeap.add(cost);
+		}
+
+		return ans;
+	}
 }

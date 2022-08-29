@@ -32,6 +32,7 @@ public class Code06_Dijkstra {
 		return distanceMap;
 	}
 
+	// 距离表中距离最短 并且 不能是打过对号的点
 	public static Node getMinDistanceAndUnselectedNode(HashMap<Node, Integer> distanceMap, HashSet<Node> touchedNodes) {
 		Node minNode = null;
 		int minDistance = Integer.MAX_VALUE;

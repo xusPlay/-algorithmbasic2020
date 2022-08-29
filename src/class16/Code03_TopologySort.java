@@ -8,7 +8,7 @@ import java.util.*;
 public class Code03_TopologySort {
 
 	// directed graph and no loop
-	public static List<Node> sortedTopology(Graph graph) {
+		public static List<Node> sortedTopology(Graph graph) {
 		// key 某个节点   value 剩余的入度
 		HashMap<Node, Integer> inMap = new HashMap<>();
 		// 只有剩余入度为0的点，才进入这个队列
